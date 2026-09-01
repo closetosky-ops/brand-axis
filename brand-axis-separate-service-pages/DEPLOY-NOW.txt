@@ -1,0 +1,16 @@
+BRAND AXIS — SEPARATE SERVICE PAGES
+
+This version uses real separate URLs:
+/brand-analysis/
+/content-direction/
+/creative-production/
+
+Upload ALL files/folders in this package to the ROOT of your GitHub repository.
+Do not upload the outer folder itself. Commit changes. Netlify should redeploy automatically.
+
+After Netlify shows Published, test these exact URLs:
+https://brand-axis-chi.netlify.app/brand-analysis/
+https://brand-axis-chi.netlify.app/content-direction/
+https://brand-axis-chi.netlify.app/creative-production/
+
+If the old /services#direction still appears, the old deployment is still live or the repo was not updated.
