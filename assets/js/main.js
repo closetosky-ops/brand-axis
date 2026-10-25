@@ -1,30 +1,6 @@
-const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
-if (menuButton && nav) {
-  menuButton.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(open));
-  });
-}
-
-const services = document.querySelector('.nav-services');
-if (services) {
-  const trigger = services.querySelector('.services-trigger');
-  trigger?.addEventListener('click', (e) => {
-    if (window.matchMedia('(max-width: 900px)').matches) {
-      e.preventDefault();
-      services.classList.toggle('open');
-    }
-  });
-}
-
-const filters = document.querySelectorAll('[data-filter]');
-const cards = document.querySelectorAll('[data-category]');
-filters.forEach(btn => btn.addEventListener('click', () => {
-  filters.forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const filter = btn.dataset.filter;
-  cards.forEach(card => {
-    card.hidden = filter !== 'all' && card.dataset.category !== filter;
-  });
-}));
+const menuToggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');if(menuToggle&&nav){menuToggle.addEventListener('click',()=>{nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',nav.classList.contains('open'))})}
+const mobileServices=document.querySelector('.services-trigger');if(mobileServices){mobileServices.addEventListener('click',e=>{if(innerWidth<=900){e.preventDefault();mobileServices.parentElement.classList.toggle('open')}})}
+async function loadWork(){const grid=document.querySelector('[data-work-grid]');if(!grid)return;try{const res=await fetch('/data/work.json',{cache:'no-store'});const data=await res.json();grid.innerHTML=data.projects.map((p,i)=>`<article class="work-card" data-category="${esc(p.category)}"><img src="${esc(p.image)}" alt="${esc(p.title)}"><div class="work-card-copy"><div class="type">${esc(p.category)}</div><h3>${esc(p.title)}</h3><small>${esc(p.service||'')}</small></div></article>`).join('');bindFilters()}catch(err){grid.innerHTML='<p>Projects are being updated.</p>'}}
+function esc(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function bindFilters(){const buttons=[...document.querySelectorAll('.filter')];const cards=[...document.querySelectorAll('.work-card')];buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const cat=btn.dataset.filter;cards.forEach(card=>card.classList.toggle('hidden',cat!=='All'&&card.dataset.category!==cat))}))}
+loadWork();

@@ -1,25 +1,33 @@
-# Brand Axis Website
+# Brand Axis — reference build
 
-Production-ready static website matching the approved Brand Axis collage in `reference/approved-website-collage.png`.
-
-## Brand palette
-- Navy: `#0F1B2D`
-- Gold: `#C6A24A`
-- Cream: `#F6F1EA`
-- Mist: `#DFE8F3`
+This build treats the approved Brand Axis reference collage as the design source of truth.
 
 ## Pages
-- `/` — Home
-- `/services.html` — Services overview
-- `/brand-analysis/` — Brand Analysis
-- `/content-direction/` — Content Direction
-- `/creative-production/` — Creative Production
-- `/about.html` — About
-- `/work.html` — Work
-- `/contact.html` — Contact
+- `/` Home
+- `/services.html` Services
+- `/brand-analysis/` Brand Analysis
+- `/content-direction/` Content Direction
+- `/creative-production/` Creative Production
+- `/about.html` About
+- `/work.html` Work
+- `/contact.html` Contact
+- `/admin/` Portfolio admin
 
 ## Netlify
-Publish directory: `.`
-Build command: leave blank.
+This is a static site. Use branch `main`, no build command, publish directory `.`.
 
-The `_redirects` file keeps older flat service URLs working and forwards them to the true standalone service pages.
+## Portfolio admin
+The Work page reads `data/work.json`. The `/admin/` page uses Decap CMS to edit that file and upload project images to `assets/uploads`.
+
+To enable the same admin workflow used for Chicagoland Axis on Netlify:
+1. Enable Netlify Identity.
+2. Set registration to **Invite only**.
+3. Enable **Git Gateway**.
+4. Invite your email as an Identity user.
+5. Visit `/admin/`, log in, open **Work → Portfolio Projects**, add/edit projects, and publish.
+
+Categories are intentionally fixed to: Strategy, Content, Creative, Personal Brand, Business.
+
+## Contact
+- brand.axis@icloud.com
+- (312) 631-1234

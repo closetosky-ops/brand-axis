@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "title": "Floral Product Concept",
+      "category": "Strategy",
+      "service": "Brand Strategy & Content",
+      "description": "Concept positioning and content direction for a premium product brand.",
+      "image": "/assets/images/work-wellness.jpg"
+    },
+    {
+      "title": "Social Content System",
+      "category": "Content",
+      "service": "Content Direction",
+      "description": "A structured monthly content system designed to make the brand easier to understand and remember.",
+      "image": "/assets/images/content-strategy.jpg"
+    },
+    {
+      "title": "Service Brand Refresh",
+      "category": "Business",
+      "service": "Positioning & Creative Direction",
+      "description": "A concept refresh for a service business whose online presence needed to match the quality of the experience.",
+      "image": "/assets/images/work-food-medicine.jpg"
+    },
+    {
+      "title": "Founder-Led Content",
+      "category": "Personal Brand",
+      "service": "Content Strategy",
+      "description": "Founder-led content direction built around expertise, trust, and a clear point of view.",
+      "image": "/assets/images/work-beauty-studio.jpg"
+    },
+    {
+      "title": "Campaign Concept",
+      "category": "Creative",
+      "service": "Creative Production",
+      "description": "Campaign concept and visual direction created to turn a strong offer into scroll-stopping content.",
+      "image": "/assets/images/creative-production.jpg"
+    },
+    {
+      "title": "Strategy in Action",
+      "category": "Strategy",
+      "service": "Brand Analysis",
+      "description": "A sample strategy concept showing how insight becomes messaging, content pillars, and a focused action plan.",
+      "image": "/assets/images/brand-positioning.jpg"
+    }
+  ]
+}

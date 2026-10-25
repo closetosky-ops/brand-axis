@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+publish_mode: simple
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+collections:
+  - name: "portfolio"
+    label: "Work"
+    files:
+      - label: "Portfolio Projects"
+        name: "projects"
+        file: "data/work.json"
+        format: "json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            fields:
+              - { label: "Project Title", name: "title", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Strategy", "Content", "Creative", "Personal Brand", "Business"]
+              - { label: "Service Line", name: "service", widget: "string", required: false }
+              - { label: "Short Description", name: "description", widget: "text", required: false }
+              - { label: "Project Image", name: "image", widget: "image" }
